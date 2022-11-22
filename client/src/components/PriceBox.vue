@@ -1,6 +1,12 @@
 <template>
 <div class="price-box">
-  <PriceItem v-for="item in filterdData" :key="item.id" :data="item" />
+
+  <TransitionGroup name="list"  >
+
+  <PriceItem v-for="item in filterdData" :key="item.uuid"  :data="item" />
+
+  </TransitionGroup>
+  <div aria-label="error" v-if="!filterdData.length && isFiltered" class="error w-100 text-center px-2">Filtered data is empty</div>
   </div>
 </template>
 
@@ -12,7 +18,7 @@ export default {
   components: {
     PriceItem
   },
-  props: ["filterdData"]
+  props: ["filterdData","isFiltered"]
 
   ,created() {
 
@@ -24,18 +30,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.error{
+color: red;
 }
 </style>

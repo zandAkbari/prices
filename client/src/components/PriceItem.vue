@@ -1,40 +1,27 @@
 <template>
-  <div class="price-item p-2 mt-2">
-  <span>
-    {{data.origin}}
-  </span>
-  |
-  <span>
-    {{data.destination}}
-  </span>
-  |
-  <span>
-    {{data.departureDate}}
-  </span>
-  |
-  <span>
-    {{data.returnDate}}
-  </span>
-  |
-  <span>
-    {{data.returnDate}}
-  </span>
-  |
-  <span>
-    {{data.price.amount}}
-  </span>
-  |
-  <span>
-    {{data.price.currency}}
-  </span>
+  <div class="price-item d-flex flex-row flex-wrap p-2 mt-2">
+   <TitleValue name="origin" :value="data.origin" />
+    <TitleValue name="destination" :value="data.destination" />
+    <TitleValue name="return date" :value="data.returnDate" />
+    <TitleValue name="departure date" :value="data.departureDate" />
+    <TitleValue name="seat availability" :value="data.seatAvailability" />
+    <TitleValue name="price" :value="`${data.price.amount} ${data.price.currency}`" />
+
+
+
+
+
   </div>
 </template>
 
 <script>
+import TitleValue from "@/components/TitleValue";
 export default {
   name: 'PriceItem',
+  components: {TitleValue},
   props: {
-    data: Object
+    data: Object,
+
   }
 }
 </script>

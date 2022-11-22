@@ -1,36 +1,27 @@
 <template>
   <input type="text"
+         :placeholder="placeholder"
             :value="modelName"
+         :aria-label="placeholder"
             @input="$emit('update:modelName', $event.target.value)"
-  class="item">
+  class="input px-2">
 </template>
 
 <script>
 export default {
   name: 'FilterItem',
-  props: ['modelName'],
+  props: ['modelName','placeholder','label'],
   emits: ['update:modelName']
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.item{
-  width: 100px;
-  height: 40px;
+.input{
+  max-width: 15rem;
+  height: 2rem;
+  border-radius:0.5rem;
+  border: solid 1px black;
 }
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+
 </style>

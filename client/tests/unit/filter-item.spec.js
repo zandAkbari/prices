@@ -11,11 +11,11 @@ describe('FilterItem.vue', () => {
     wrapper.destroy;
   });
   it('should render', () => {
-    expect(wrapper.find('.item').exists()).toBe(true)
+    expect(wrapper.find('.input').exists()).toBe(true)
   });
   test('sets the value and emit it', async () => {
 
-    const input = wrapper.find('.item')
+    const input = wrapper.find('.input')
 
     await input.setValue('FC')
 

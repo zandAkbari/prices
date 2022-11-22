@@ -1,13 +1,13 @@
 <template>
-  <div class="filter-box d-flex flex-row justify-content-between">
-    <div class="d-flex w-100 justify-content-center">
-      <div>
-  <FilterItem v-model:modelName="origin" />
+  <div class="filter-box d-flex flex-lg-row flex-column  align-items-md-center">
+    <div class="d-flex w-100 flex-md-row flex-column justify-content-center">
 
-  <FilterItem v-model:modelName="destination" />
-   </div>
+      <FilterItem class="mr-md-5" placeholder="origin name" v-model:modelName="origin" />
+
+      <FilterItem class="ml-md-5 mt-md-0 mt-3" placeholder="destination name" v-model:modelName="destination" />
+
       </div>
-  <button class="submit" @click="submitFilter">submit</button>
+  <button aria-label="submit filter" class="submit mt-lg-0 mt-3" @click="submitFilter">submit filter</button>
   </div>
 </template>
 
@@ -36,18 +36,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.submit{
+  width: 10rem;
+  background: #fdb713;
+  border: 0px;
+  border-radius: 0.5rem;
 }
 </style>
