@@ -27,6 +27,7 @@ export default {
   },
   methods:{
     submitFilter(){
+      //Call emit to send origin and destination to the price page
       this.$emit("filter-data", this.origin, this.destination);
     }
   }
@@ -34,7 +35,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped lang="scss">
 .submit{
   width: 10rem;

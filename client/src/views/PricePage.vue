@@ -37,6 +37,7 @@ export default {
 
   methods:{
     getPrices(){
+      //Call API to get all prices
       getPrices()
           .then(response => {
             this.prices = response.data.data;
@@ -45,7 +46,8 @@ export default {
           })
     },
     allFilter(origin, destination){
-  this.isFiltered=true
+      //If origin or destination is full then call filter function
+      this.isFiltered=true
       let data=this.prices
       if(origin){
         data =this.filterCat(this.prices,"origin",origin)
@@ -56,7 +58,7 @@ export default {
       this.filterdData=data
 
     },filterCat(data,selectedItem,expectedValue){
-
+      //Do filter on an array to find items with a selected item
       return data.filter( ( item ) => {
         if ( item[selectedItem] == null ) {
           return ;
@@ -68,7 +70,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped lang="scss">
 .panel{
   background: #f6f6f6;
